@@ -7,11 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @GetMapping("/hola")
-    public String holaMundo(){
+    public String holaMundo() {
         return "<h1>Hola Mundo!!</h1>";
     }
-    @GetMapping("tailwind")
-    public String tailwind(){
+
+    @GetMapping("/tailwind")
+    public String tailwind() {
         return """
                 <!doctype html>
                 <html>

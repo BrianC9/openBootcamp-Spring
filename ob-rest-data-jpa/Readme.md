@@ -1,8 +1,9 @@
 ## Spring Boot
 
-Proyecto Spring  Boot con las siguientes dependencias y starters:
+Proyecto Spring Boot con las siguientes dependencias y starters:
+
 * H2
-* Spring Data JPA 
+* Spring Data JPA
 * Spring Web
 * Spring Boot Dev Tools
 
@@ -15,3 +16,9 @@ Acceso a los endpoints mediante Postman o Navegador.
 1. Clase Book
 2. Interfaz BookRepository
 3. BookController
+    * Buscar todos los libros
+    * Buscar un solo libro
+    * Crear un nuevo libro
+    * Actualizar un libro existente
+    * Borrar un libro
+    * Borrar todos los libros
