@@ -10,7 +10,7 @@ Aplicación API REST con acceso a base de datos H2 para persistir la informació
 
 Acceso a los endpoints mediante Postman o Navegador.
 
-### Entiddad Book
+### Entidad Book
 
 1. Clase Book
 2. Interfaz BookRepository
