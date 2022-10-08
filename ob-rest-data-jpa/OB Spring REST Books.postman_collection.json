@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "62e2d6f2-6113-4753-8fb8-ef0f934b93e8",
+		"name": "OB Spring REST Books",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21526353"
+	},
+	"item": [
+		{
+			"name": "/hola",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL8080}}/hola",
+					"host": [
+						"{{URL8080}}"
+					],
+					"path": [
+						"hola"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/tailwind",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL8080}}/tailwind",
+					"host": [
+						"{{URL8080}}"
+					],
+					"path": [
+						"tailwind"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findAll Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL8080/api}}/v1/books",
+					"host": [
+						"{{URL8080/api}}"
+					],
+					"path": [
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findBook(id)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL8080/api}}/v1/books/1\n",
+					"host": [
+						"{{URL8080/api}}"
+					],
+					"path": [
+						"v1",
+						"books",
+						"1\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"A court\",\r\n    \"autor\": \"Sarah\",\r\n    \"nPages\": 500,\r\n    \"price\": 12.99,\r\n    \"releaseDate\": \"2020-08-04\",\r\n    \"eBook\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL8080/api}}/v1/books",
+					"host": [
+						"{{URL8080/api}}"
+					],
+					"path": [
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"title\": \"Narnia actualizado\",\r\n    \"autor\": \"Sarah\",\r\n    \r\n    \"price\": 12.99,\r\n    \"releaseDate\": \"2020-08-04\",\r\n    \"eBook\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL8080/api}}/v1/books/",
+					"host": [
+						"{{URL8080/api}}"
+					],
+					"path": [
+						"v1",
+						"books",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL8080/api}}/v1/books/1",
+					"host": [
+						"{{URL8080/api}}"
+					],
+					"path": [
+						"v1",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar TODOS los books",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL8080/api}}/v1/books",
+					"host": [
+						"{{URL8080/api}}"
+					],
+					"path": [
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL8080",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "URL8080/api",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}
