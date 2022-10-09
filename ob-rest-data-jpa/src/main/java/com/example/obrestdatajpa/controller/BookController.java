@@ -2,11 +2,14 @@ package com.example.obrestdatajpa.controller;
 
 import com.example.obrestdatajpa.entities.Book;
 import com.example.obrestdatajpa.repository.BookRepository;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.StreamingHttpOutputMessage;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 import java.util.List;
 import java.util.Optional;
@@ -47,7 +50,8 @@ public class BookController {
 
     // Buscar un libro por el id
     @GetMapping("/api/v1/books/{id}")
-    public ResponseEntity<Book> findById(@PathVariable Long id) {
+    @ApiOperation("Buscar un libro por clave primaria id Long")
+    public ResponseEntity<Book> findById(@ApiParam("id de tipo Long") @PathVariable Long id) {
         Optional<Book> bookOpt = bookRepository.findById(id);
         // opción 1
 //        if (bookOpt.isPresent())
@@ -119,8 +123,11 @@ public class BookController {
 
     }
     /**
+     *
      * Borrar TODOS los registros de la base de datos
      */
+    @DeleteMapping("/api/v1/books")
+    @ApiIgnore
     public ResponseEntity<Book> deleteAll(){
         log.info("REST Requesto for borrar todos los registros de la BBDD");
         bookRepository.deleteAll();
