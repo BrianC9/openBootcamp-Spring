@@ -22,6 +22,9 @@ class BookControllerTest {
      * Con esta clase podemos crear una request HTTP vinculadas a una dirección y un puerto
      * Nos permite utilizar los métodos HTTP, para poder hacerles desde Java de manera interna.
      * */
+
+    // Atributos necesarios para poder ejecutar peticiones HTTP desde Java
+
     private TestRestTemplate testRestTemplate;
 
     @Autowired // Le decimos a Spring que nos inyecte el builder.
@@ -30,6 +33,8 @@ class BookControllerTest {
     @LocalServerPort
     private int PORT;
 
+    // Preparación previa a cada test
+
     @BeforeEach
     void setUp() {
         restTemplateBuilder = restTemplateBuilder.rootUri("http://localhost:" + PORT);
@@ -37,6 +42,7 @@ class BookControllerTest {
 
     }
 
+    // Batería de tests
 
     @Test
     @DisplayName("Comprueba que se pinta el hola mundo en el body")
