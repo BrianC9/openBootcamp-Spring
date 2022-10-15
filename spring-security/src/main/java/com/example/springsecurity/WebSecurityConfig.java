@@ -15,6 +15,8 @@ import org.springframework.security.web.firewall.StrictHttpFirewall;
 @EnableWebSecurity
 public class WebSecurityConfig {
 
+    // Restricción de rutas
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
@@ -26,6 +28,9 @@ public class WebSecurityConfig {
                 .httpBasic();
         return http.build();
     }
+
+
+    //Ceación de Roles
 
     @Bean
     public InMemoryUserDetailsManager userDetailsService() {
@@ -41,6 +46,8 @@ public class WebSecurityConfig {
                 .build();
         return new InMemoryUserDetailsManager(user, user2);
     }
+
+    // Creación de un firewall personalizado
 
     @Bean
     public HttpFirewall httpFirewall() {
