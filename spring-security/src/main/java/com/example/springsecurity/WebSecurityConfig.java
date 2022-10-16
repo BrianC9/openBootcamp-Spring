@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.firewall.HttpFirewall;
@@ -23,6 +24,7 @@ public class WebSecurityConfig {
         http.authorizeHttpRequests()
                 .antMatchers("/hola").permitAll()
                 .antMatchers("/adios").hasRole("ADMIN")
+                .antMatchers("/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic();
@@ -31,6 +33,8 @@ public class WebSecurityConfig {
 
 
     //Ceación de Roles
+    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(16);
+
 
     @Bean
     public InMemoryUserDetailsManager userDetailsService() {
@@ -46,6 +50,7 @@ public class WebSecurityConfig {
                 .build();
         return new InMemoryUserDetailsManager(user, user2);
     }
+
 
     // Creación de un firewall personalizado
 
