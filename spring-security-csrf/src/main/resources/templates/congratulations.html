@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Welcome  </title>
 </head>
 <body>
-
+<h1>Bienvenido <span th:text="${nombreUsuario}"></span></h1>
+<p>Tu email: <span th:text="${email}"></span></p>
+<p>Contraseña: <span th:text="${pass}"></span> </p>
 </body>
 </html>

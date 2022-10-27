@@ -23,6 +23,7 @@ public class UserMvcController {
         System.out.println(user);
         model.addAttribute("nombreUsuario",user.getUsername());
         model.addAttribute("email",user.getEmail());
+        model.addAttribute("pass",user.getPassword());
         return "congratulations";
     }
 }
